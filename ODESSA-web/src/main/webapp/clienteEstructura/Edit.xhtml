@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core"
+      xmlns:p="http://primefaces.org/ui">
+
+    <ui:composition>
+
+        <p:dialog id="ClienteEstructuraEditDlg" widgetVar="ClienteEstructuraEditDialog" modal="true" resizable="false" appendTo="@(body)" header="#{bundle.EditClienteEstructuraTitle}">
+            <h:form id="ClienteEstructuraEditForm">
+                <h:panelGroup id="display">
+                    <p:panelGrid columns="2" rendered="#{clienteEstructuraController.selected != null}">
+                        <p:outputLabel value="#{bundle.EditClienteEstructuraLabel_idClienteEstructura}" for="idClienteEstructura" />
+                        <p:inputText id="idClienteEstructura" value="#{clienteEstructuraController.selected.idClienteEstructura}" title="#{bundle.EditClienteEstructuraTitle_idClienteEstructura}" required="true" requiredMessage="#{bundle.EditClienteEstructuraRequiredMessage_idClienteEstructura}"/>
+                        <p:outputLabel value="#{bundle.EditClienteEstructuraLabel_idCliente}" for="idCliente" />
+                        <p:selectOneMenu id="idCliente" value="#{clienteEstructuraController.selected.idCliente}" required="true" requiredMessage="#{bundle.EditClienteEstructuraRequiredMessage_idCliente}">
+                            <f:selectItem itemLabel="#{bundle.SelectOneMessage}"/>
+                            <f:selectItems value="#{clienteController.itemsAvailableSelectOne}"
+                                           var="idClienteItem"
+                                           itemValue="#{idClienteItem}"/>
+                        </p:selectOneMenu>
+                        <p:outputLabel value="#{bundle.EditClienteEstructuraLabel_idElementoEstructura}" for="idElementoEstructura" />
+                        <p:selectOneMenu id="idElementoEstructura" value="#{clienteEstructuraController.selected.idElementoEstructura}" required="true" requiredMessage="#{bundle.EditClienteEstructuraRequiredMessage_idElementoEstructura}">
+                            <f:selectItem itemLabel="#{bundle.SelectOneMessage}"/>
+                            <f:selectItems value="#{elementoEstructuraController.itemsAvailableSelectOne}"
+                                           var="idElementoEstructuraItem"
+                                           itemValue="#{idElementoEstructuraItem}"/>
+                        </p:selectOneMenu>
+                    </p:panelGrid>
+                    <p:commandButton actionListener="#{clienteEstructuraController.update}" value="#{bundle.Save}" update="display,:ClienteEstructuraListForm:datalist,:growl" oncomplete="handleSubmit(args, 'ClienteEstructuraEditDialog');"/>
+                    <p:commandButton value="#{bundle.Cancel}" onclick="ClienteEstructuraEditDialog.hide()"/>
+                </h:panelGroup>
+            </h:form>
+        </p:dialog>
+
+    </ui:composition>
+</html>

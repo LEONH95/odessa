@@ -1,0 +1,75 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      >
+
+    <h:head>
+        <title></title>
+        <h:outputStylesheet library="css" name="bootstrap.css"/>
+        <h:outputStylesheet library="css" name="resumenStyle.css"/>
+    </h:head>
+
+    <h:body>
+        <div id="header">
+
+            <div class="title">
+                <h4>
+                    Resumen de alta de un nuevo usuario
+                </h4><hr/>
+            </div>
+        </div>
+
+        <h:form>            
+
+            <div id="ContentT">
+                <h6>El usuario se ha dado de alta exitosamente</h6>
+                <div id="left" >
+                    <ui:insert name="leftTop"/>  
+
+                </div>
+
+                <div id="center">
+                    <ui:insert name="centerTop"/>
+                </div>
+
+                <div id="right">
+                    <ui:insert name="rightTop"/>
+                </div>
+                <hr/><h5>¿Qué deseas hacer?</h5>
+                <div class="triangulo"/><h6>Selecciona una de las opciones</h6>
+            </div>
+            <br/><br/><br/><br/>
+            <div id="opcionesList" style="border-left:2px solid #DDDADA;  margin-left: 3em;"> 
+                <br/>
+                <h:graphicImage value="/imag/AltaLogo.PNG"/><br/>
+                <ui:insert name="opcion1"/>
+                <h8>Crear un nuevo usuario. Aquí ingresas datos, asignas perfiles de acceso e información.</h8><br/>
+            </div>
+
+            <div id="opcionesList">
+                <br/>
+                <h:graphicImage value="/imag/EditarLogo.PNG"/><br/>
+                <ui:insert name="opcion2" />
+                <h8>Modificar usuarios existentes. Aquí podrás consultar, modificar, activar, desactivar o eliminar usuarios.</h8><br/>
+            </div>
+
+            <div id="opcionesList">
+                <br/>
+                <h:graphicImage value="/imag/AsignarPLogo.PNG"/><br/>
+                <ui:insert name="opcion3"/>
+                <h8>Aquí les asignas los permisos al usuario que deseas.</h8><br/>
+            </div>
+
+            <div id="opcionesList">
+                <br/>
+                <h:graphicImage value="/imag/CargaMLogo.PNG"/><br/>
+                <ui:insert name="opcion4"/>
+                <h8>Aquí cargas un archivo Excel con los usuarios que deseas crear.</h8><br/>
+            </div>
+
+        </h:form>
+
+    </h:body>
+</html>

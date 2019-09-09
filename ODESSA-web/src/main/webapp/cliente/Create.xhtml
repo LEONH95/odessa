@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core"
+      xmlns:p="http://primefaces.org/ui">
+
+    <ui:composition>
+
+        <p:dialog id="ClienteCreateDlg" widgetVar="ClienteCreateDialog" modal="true" resizable="false" appendTo="@(body)" header="#{bundle.CreateClienteTitle}">
+            <h:form id="ClienteCreateForm">
+                <h:panelGroup id="display">
+                    <p:panelGrid columns="2" rendered="#{clienteController.selected != null}">
+                        <p:outputLabel value="#{bundle.CreateClienteLabel_idCliente}" for="idCliente" />
+                        <p:inputText id="idCliente" value="#{clienteController.selected.idCliente}" title="#{bundle.CreateClienteTitle_idCliente}" required="true" requiredMessage="#{bundle.CreateClienteRequiredMessage_idCliente}"/>
+                        <p:outputLabel value="#{bundle.CreateClienteLabel_fechaRegistro}" for="fechaRegistro" />
+                        <p:calendar id="fechaRegistro" pattern="MM/dd/yyyy HH:mm:ss" value="#{clienteController.selected.fechaRegistro}" title="#{bundle.EditClienteTitle_fechaRegistro}"  showOn="button"/>
+                        <p:outputLabel value="#{bundle.CreateClienteLabel_numeroCliente}" for="numeroCliente" />
+                        <p:inputText id="numeroCliente" value="#{clienteController.selected.numeroCliente}" title="#{bundle.CreateClienteTitle_numeroCliente}" required="true" requiredMessage="#{bundle.CreateClienteRequiredMessage_numeroCliente}"/>
+                        <p:outputLabel value="#{bundle.CreateClienteLabel_nombreComercial}" for="nombreComercial" />
+                        <p:inputText id="nombreComercial" value="#{clienteController.selected.nombreComercial}" title="#{bundle.CreateClienteTitle_nombreComercial}" required="true" requiredMessage="#{bundle.CreateClienteRequiredMessage_nombreComercial}"/>
+                        <p:outputLabel value="#{bundle.CreateClienteLabel_idEstatus}" for="idEstatus" />
+                        <p:selectOneMenu id="idEstatus" value="#{clienteController.selected.idEstatus}" required="true" requiredMessage="#{bundle.EditClienteRequiredMessage_idEstatus}">
+                            <f:selectItems value="#{estatusController.itemsAvailableSelectOne}"
+                                           var="idEstatusItem"
+                                           itemValue="#{idEstatusItem}"/>
+                        </p:selectOneMenu>
+                    </p:panelGrid>
+                    <p:commandButton actionListener="#{clienteController.create}" value="#{bundle.Save}" update="display,:ClienteListForm:datalist,:growl" oncomplete="handleSubmit(args,'ClienteCreateDialog');"/>
+                    <p:commandButton value="#{bundle.Cancel}" onclick="ClienteCreateDialog.hide()"/>
+                </h:panelGroup>
+            </h:form>
+        </p:dialog>
+
+    </ui:composition>
+</html>

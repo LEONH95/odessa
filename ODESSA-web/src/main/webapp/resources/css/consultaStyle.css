@@ -1,0 +1,179 @@
+
+#menuConsulta{
+    background-color:  #DF7401;
+    height: 4em;
+    width: 100%;
+    padding: 0px;
+    float:left;
+    position: relative; 
+    z-index: 3;
+}
+
+#menuConsulta li {
+    display: inline;
+}
+
+#menuConsulta li #espaciadoMenu {
+    background-color: #DF7401;
+    border-bottom:3em;
+}
+
+#menuConsulta li a {
+    height: 2em;
+    width: 10em;
+    font-size: 11px;
+    text-decoration: none;
+    float: left;
+    padding: 10px;
+    background-color: #DF7401;
+    color: #fff;
+    border-left-color:#fff;
+    border-right-color: #fff;
+}
+
+#espaciadoMenu{
+    background-color:#DF7401;
+    width: 50em;
+    float:left;
+    height: 2em;
+
+}
+
+#lineaDivision{
+    width: 100%;
+    height: 1em;
+    background-color: #6E6E6E;
+    float:left;
+    position: relative; 
+    z-index: 1;
+}
+
+body{
+    background-color: #F2EFFB;
+
+}
+
+#ContainerMostrar{
+    background: #fff;
+    margin-left: 2em;
+    margin-right: 2em;
+    border-radius: 1em;
+    color: #D8D8D8;
+
+}
+
+.triangulo {
+    width: 1em; 
+    height: 0; 
+    border-left: 0.5em solid #DF7401;
+    border-top: 0.5em solid transparent;
+    border-bottom: 0.5em solid transparent; 
+    margin-left: 0.5em;
+    float: left;
+}
+
+h5{
+    font-weight: 500;
+    color:#DF7401;
+    margin-left: 1em;
+    margin-bottom: 1px;
+}
+
+h6{
+    color:#A4A4A4;
+    margin-top: 1em;
+    margin-bottom: 1em;
+    font-weight: bolder;
+    font-size: 1em;
+}
+
+hr{
+    margin: 8px;
+    margin-left: 1em;
+}
+
+#submenuConsulta{
+    background-color: white;
+    border-radius: 1em;
+    float: top;
+    margin: auto;
+    margin-bottom: 1em;
+    width: 80%;
+    height: 10em;
+    padding-left: 2em;
+    box-shadow: 1px 1px 5px #666;  
+    position: relative; 
+    z-index: 2;
+
+}
+
+.ui-widget{
+
+   margin-left: 8em;
+   margin-right: 8em;
+   font-family: monospace;
+   font-size: 1em;
+
+}
+
+.ui-datatable .ui-datatable-header, .ui-datatable .ui-datatable-footer {
+    text-align: center;
+    color: white;
+    padding: 2em 5em;
+    background: #DF7401;
+}
+
+.ui-datatable thead th{
+    background: #A4A4A4;
+    color: white;
+
+}
+
+.ui-datatable thead th, .ui-datatable tbody td, .ui-datatable tfoot td, .ui-datatable tfoot th {
+    padding: 4px 10px;
+    overflow: hidden;
+    border-width: 1px;
+    border-style: solid;
+    text-align: center;
+}
+
+.ui-paginator.ui-paginator-bottom {
+    border: none;
+    background: white;
+}
+
+
+#submenuConsulta img{
+    width: 9em;
+    height: 3em;
+    float:left;
+    position: relative; 
+   z-index: 5;
+    
+}
+
+#opcionesSubmenu{
+    width: 5em;
+    height: 5em;
+    float:right;
+    text-align: center;
+    padding-bottom: 1em;
+}
+
+#opcionesSubmenu img{
+    width: 40px;
+    height: 2em;
+    margin-left:1em;
+     position: relative; 
+    z-index: 4;
+    
+}
+
+#rutaPagina{
+    margin-left: 2em;
+    width: 20em;
+}
+
+a{
+    color:#6E6E6E;
+}

@@ -1,0 +1,85 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"       
+      xmlns:p="http://primefaces.org/ui"
+      xmlns:f="http://xmlns.jcp.org/jsf/core">      
+
+    <h:head>
+        <title></title>
+        <h:outputStylesheet library="css" name="bootstrap.css"/>
+        <h:outputStylesheet library="css" name="consultaStyle.css"/>
+        
+    </h:head>
+
+    <h:body>
+        <div id="menuConsulta">
+            <ul>     
+                <li><a>Inicio</a></li>
+                <li><a>Notificaciones</a></li>
+                <li><div id="espaciadoMenu"/></li>
+                <li><a>Configurar</a></li>
+                <li><a>Salir</a></li>
+            </ul>
+        </div>
+        <div id="lineaDivision"/>
+
+        <h:form>
+            <div id="submenuConsulta">
+
+                <h:graphicImage value="/imag/OdessaLogo.jpg" id="logo"/>
+
+                <div id="opcionesSubmenu">
+                    <h:graphicImage value="/imag/ElementosSistema.PNG"/><br/>
+                    <h:link>Elementos sistema</h:link>
+                </div>
+
+                <div id="opcionesSubmenu">
+                    <h:graphicImage value="/imag/Catalogos.PNG"/><br/>
+                    <h:link>Catálogos</h:link>
+                </div>
+
+                <div id="opcionesSubmenu">
+                    <h:graphicImage value="/imag/Perfiles.PNG"/><br/>
+                    <h:link>Perfiles</h:link>
+                </div>
+
+                <div id="opcionesSubmenu">
+                    <h:graphicImage value="/imag/Perfiles.PNG"/><br/>
+                    <h:link>Perfiles</h:link>
+                </div>
+
+                <div id="opcionesSubmenu">
+                    <h:graphicImage value="/imag/Relaciones.PNG"/><br/>
+                    <h:link>Relaciones</h:link>
+                </div>
+
+                <div id="opcionesSubmenu">
+                    <h:graphicImage value="/imag/Usuarios.PNG"/><br/>
+                    <h:link>Usuarios</h:link>
+                </div>
+
+            </div>
+
+            <div id="rutaPagina">
+                <h6><h:link>Inicio</h:link>><h:link>Usuarios</h:link>><h:link>Editar usuario existente</h:link></h6>
+            </div>
+
+            <div id="ContainerMostrar">
+                <br/>
+                <h5>Editar un usuario existente</h5><hr/>
+                
+                <div id="ContainerMostrar2">
+                <div class="triangulo"></div> <h6>Da clic en Editar para modificar datos o Eliminar para borrar un usuario.</h6>
+                </div>
+                
+                <br/><br/>
+                <ui:insert name="tablaUAdministrador"/><br/>   
+            </div>
+
+        </h:form>
+     
+    </h:body>
+</html>
+

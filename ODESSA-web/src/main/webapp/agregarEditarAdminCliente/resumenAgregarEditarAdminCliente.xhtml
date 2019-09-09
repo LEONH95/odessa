@@ -1,0 +1,56 @@
+<ui:composition template="/resumenTemplate.xhtml"
+                xmlns="http://www.w3.org/1999/xhtml"
+                xmlns:h="http://xmlns.jcp.org/jsf/html"
+                xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+                xmlns:f="http://xmlns.jcp.org/jsf/core"
+                xmlns:p="http://primefaces.org/ui">
+
+    <ui:define name="leftTop">
+        <h:outputText value="Núm.único de Usuario"/><br/>
+        <h:inputText value=""
+                     disabled="true"/><br/><br/>    
+
+        <h:outputText value="Nombre"/><br/>
+        <h:inputText value=""
+                     disabled="true"/><br/><br/>  
+    </ui:define>
+
+    <ui:define name="centerTop">
+        <h:outputText value="Tipo de Usuario"/><br/>
+        <h:inputText value=""
+                     disabled="true"/><br/><br/>   
+
+        <h:outputText value="Cliente"/><br/>
+        <h:inputText value=""
+                     disabled="true"/><br/><br/>
+    </ui:define>
+
+    <ui:define name="rightTop">
+        <h:outputText value="Estatus"/><br/>
+        <h:inputText value=""
+                     disabled="true"/><br/><br/>    
+
+        <h:outputText value="Elemento de estructura"/><br/>
+        <h:inputText value=""
+                     disabled="true"/><br/><br/>    
+               
+    </ui:define>
+
+    <ui:define name="opcion1">
+        <h:link value="Dar de alta un nuevo usuario"/><br/>
+    </ui:define>
+
+    <ui:define name="opcion2">
+        <h:link>Editar un usuario existente</h:link><br/>
+    </ui:define>
+
+    <ui:define name="opcion3">
+       <h:link>Asignar perfiles a un usuario</h:link><br/>
+    </ui:define>
+
+    <ui:define name="opcion4">
+        <h:link>Carga Masiva de Usuarios</h:link><br/>
+    </ui:define>
+    
+</ui:composition>
+

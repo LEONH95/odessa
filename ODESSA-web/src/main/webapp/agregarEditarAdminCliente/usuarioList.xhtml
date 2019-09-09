@@ -1,0 +1,51 @@
+<ui:composition template="/mostrarTemplate.xhtml"
+              >
+
+    <ui:define name="tablaUAdministrador">
+
+        <h:dataTable var="u" border="5" value="#{usuarioController.consultarGeneral()}">
+            <f:facet name="header">Usuarios administradores</f:facet>            
+            <h:column>
+                <f:facet name="header" >No.Trabajador</f:facet>
+                    #{u.numeroTrabajador}
+            </h:column> 
+            <h:column>
+                <f:facet name="header" >Nombre(s)</f:facet>
+                    #{u.nombre}
+            </h:column> 
+
+            <h:column>
+                <f:facet name="header" >Apellido paterno</f:facet>
+                   #{u.apellidoPaterno}
+            </h:column>
+            <h:column>
+                <f:facet name="header" >Apellido materno</f:facet>
+                 #{u.apellidoMaterno}
+            </h:column> 
+            <h:column>
+                <f:facet name="header" >Tipo Usuario</f:facet>
+                 #{u.idTipoUsuario.descripcion}
+            </h:column> 
+            <h:column>
+                <f:facet name="header" >Estatus</f:facet>
+                #{u.idEstatus.nombre}
+            </h:column> 
+           <h:column>
+                <f:facet name="header"/>
+               <!-- <p:commandLink><h:graphicImage value="/imag/EditarBtn.PNG"/></p:commandLink> -->
+               <h:commandButton value="Editar"/>
+            </h:column>
+
+            <h:column>
+                <f:facet name="header"/>
+                <h:commandButton value="Eliminar" action="#{usuarioController.prepareDelete()}" rendered="#{!usuarioController.confirm}"/>
+                <h:commandButton value="Si" rendered="#{usuarioController.confirm}" action="#{usuarioController.eliminar(u.idUsuario)}"/>
+                <h:commandButton value="No" rendered="#{usuarioController.confirm}" action="#{usuarioController.mainClean('List')}"/>
+              </h:column>
+             
+         
+        </h:dataTable>
+
+    </ui:define>
+    
+</ui:composition>

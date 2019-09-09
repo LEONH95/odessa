@@ -1,0 +1,81 @@
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      >
+
+    <h:head>
+        <title></title>
+        <h:outputStylesheet library="css" name="bootstrap.css"/>
+        <h:outputStylesheet library="css" name="form.css"/>
+        
+        
+    </h:head>
+
+    <h:body>
+        
+        <div id="header">
+            
+            <div class="title">
+                <h:panelGroup  rendered="#{!usuarioController.confirm}">
+                <h4 id="Alta">
+                    Dar de alta un nuevo usuario
+                </h4>
+                </h:panelGroup>
+                <h:panelGroup  rendered="#{usuarioController.confirm}">
+                <h4 id="Editar">
+                    Editar usuario existente
+                </h4>
+                </h:panelGroup>
+                <hr/>
+            </div>
+        </div>
+        
+        
+            
+
+        <h:form>            
+
+            <div id="ContentT">
+                <br/>
+                <div class="triangulo"/><h6>Ingresa los datos del usuario en los campos correspondientes</h6><br/>
+                <div id="left">
+                    <ui:insert name="leftTop"/><br/>   
+                </div>
+
+                <div id="center">
+                    <ui:insert name="centerTop"/><br/><br/><br/><br/>
+                </div>
+
+                <div id="right">
+                    <ui:insert name="rightTop"/>
+                </div>
+            </div>
+
+            <div id="ContentD">  
+                <h5>Datos personales</h5><hr/>
+                <div id="left">
+                    <br/>
+                    <ui:insert name="leftDown"/>
+                </div>
+                <div id="center">
+                    <br/>
+                    <ui:insert name="centerDown"/>
+                </div>
+                <div id="right">
+                    <br/>
+                    <ui:insert name="rightDown"/>
+                </div>
+            </div>
+
+            <br/>
+
+            <div id="buttons">
+                <ui:insert name="button"/>
+            </div>
+        </h:form>
+        
+        
+        
+
+    </h:body>
+</html>

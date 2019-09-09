@@ -1,0 +1,92 @@
+#left{
+    width:25em; 
+    float:left; 
+    height: 15em;
+}
+
+#center{
+    width:25em; 
+    margin: auto;
+    margin-left: 6em;
+    margin-right: 6em;
+    float: left;
+    height: 15em;
+}
+
+#right{
+    width:25em; 
+    margin-left: 62em;
+    height: 15em;
+    
+}  
+#ContentT{
+    width: 100%;
+    height:20em;
+    margin-left: 2em;
+    color: #585858;
+    text-align: left;
+
+}
+#ContentD{
+   
+    height:22em;
+    margin-left: 2em;
+    color: #585858;
+    text-align: left;
+}
+
+h4{
+    text-align: left;
+    margin-left: 1em;
+    color:#DF7401;
+    margin-bottom: 1px;
+}
+
+h5{
+    color:#585858;
+    text-align: left;
+
+}
+
+hr{
+    margin: 0em;
+}
+
+#buttons input#guardar{
+    margin-left: 3em;
+}
+#buttons input{
+    border-radius: 5px;
+    border-color: #D8D8D8;
+    width: 8em;
+    margin-left: 1em;
+    margin-right: 1em;
+}
+
+#ContentD input, select, optgroup, textarea{
+    border-radius: 5px;
+    border-color: #D8D8D8;
+    width: 20em;
+
+}
+#ContentT input, select, optgroup, textarea{
+    border-radius: 5px;
+    border-color: #D8D8D8;
+    width: 20em;
+
+}
+#buttons{
+
+    text-align: center
+}
+.triangulo {
+    width: 21px; 
+    height: 0; 
+    border-left: 13px solid #DF7401;
+    border-top: 8px solid transparent;
+    border-bottom: 8px solid transparent; 
+    float: left;
+
+}
+
+

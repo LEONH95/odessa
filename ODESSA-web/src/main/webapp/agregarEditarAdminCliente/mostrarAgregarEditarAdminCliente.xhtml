@@ -1,0 +1,84 @@
+<ui:composition template="/mostrarTemplate.xhtml"
+                xmlns="http://www.w3.org/1999/xhtml"
+                xmlns:h="http://xmlns.jcp.org/jsf/html"
+                xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+                xmlns:f="http://xmlns.jcp.org/jsf/core"
+                xmlns:p="http://primefaces.org/ui">
+
+    <ui:define name="tablaUAdministrador">
+
+        <p:dataTable id="tbl" var="u" value="#{usuarioController.consultarGeneral()}"
+                     paginatorTemplate="{CurrentPageReport}  {FirstPageLink} {PreviousPageLink} {PageLinks} {NextPageLink} {LastPageLink}"
+                     paginatorPosition="bottom" paginator="true" rows="5" style="margin-bottom:20px">
+
+
+            <f:facet name="header">Usuarios administradores</f:facet>    
+            <p:column sortBy="#{u.numeroTrabajador}">
+                <f:facet name="header">
+                    <h:outputText value="No. Trabajador" />
+                </f:facet>
+                <h:outputText value="#{u.numeroTrabajador}" />
+            </p:column>
+
+            <p:column>
+                <f:facet name="header">
+                    <h:outputText value="Nombre(s)"/>
+                </f:facet>
+                <h:outputText value="#{u.nombre}" />
+            </p:column>
+
+            <p:column>
+                <f:facet name="header">
+                    <h:outputText value="Apellido Paterno" />
+                </f:facet>
+                <h:outputText value="#{u.apellidoPaterno}" />
+            </p:column>
+
+            <p:column>
+                <f:facet name="header">
+                    <h:outputText value="Apellido Materno" />
+                </f:facet>
+                <h:outputText value="#{u.apellidoMaterno}" />
+            </p:column>
+
+            <p:column>
+                <f:facet name="header">
+                    <h:outputText value="ID Tipo Usuario" />
+                </f:facet>
+                <h:outputText value="#{u.idTipoUsuario.descripcion}" />
+            </p:column>
+
+            <p:column>
+                <f:facet name="header">
+                    <h:outputText value="Estatus" />
+                </f:facet>
+                <h:outputText value="#{u.idEstatus.nombre}" />
+            </p:column>
+
+            <p:column>
+                <f:facet name="header"/>
+                <h:commandButton onclick="editarUsuario()" image="/imag/EditarBtn.PNG" action="#{usuarioController.prepareEdit(u)}"/> 
+            </p:column>
+            <p:column>
+                <f:facet name="header"/>
+                
+          
+                <h:commandButton onclick="PF('dlg2').show();" image="/imag/EliminarBtn.PNG" action="#{usuarioController.prepareDelete(u)}" rendered="#{!usuarioController.confirm}"/>
+                <h:commandButton value="Si" action="#{usuarioController.eliminar()}" rendered="#{usuarioController.confirm}"/>
+                <h:commandButton value="No" action="#{usuarioController.mainClean('mostrarAgregarAdminCliente')}" rendered="#{usuarioController.confirm}"/>
+            </p:column>
+            
+            
+        </p:dataTable>
+
+            <p:dialog header="Modal Dialog" widgetVar="dlg2" modal="true" height="100">
+            <h:outputText value="Estas seguro que deseas eliminar" />
+                <h:commandButton value="Si" action="#{usuarioController.eliminar()}" />
+                <h:commandButton value="No" action="#{usuarioController.mainClean('mostrarAgregarAdminCliente')}"/>
+            </p:dialog>   
+       
+
+
+    </ui:define>
+
+</ui:composition>

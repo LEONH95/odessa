@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core"
+      xmlns:p="http://primefaces.org/ui">
+
+    <ui:composition>
+
+        <p:dialog id="ClienteEstructuraViewDlg" widgetVar="ClienteEstructuraViewDialog" modal="true" resizable="false" appendTo="@(body)" header="#{bundle.ViewClienteEstructuraTitle}">
+            <h:form id="ClienteEstructuraViewForm">
+                <h:panelGroup id="display">
+                    <p:panelGrid columns="2" rendered="#{clienteEstructuraController.selected != null}">
+                        <h:outputText value="#{bundle.ViewClienteEstructuraLabel_idClienteEstructura}"/>
+                        <h:outputText value="#{clienteEstructuraController.selected.idClienteEstructura}" title="#{bundle.ViewClienteEstructuraTitle_idClienteEstructura}"/>
+                        <h:outputText value="#{bundle.ViewClienteEstructuraLabel_idCliente}"/>
+                        <h:outputText value="#{clienteEstructuraController.selected.idCliente}" title="#{bundle.ViewClienteEstructuraTitle_idCliente}"/>
+                        <h:outputText value="#{bundle.ViewClienteEstructuraLabel_idElementoEstructura}"/>
+                        <h:outputText value="#{clienteEstructuraController.selected.idElementoEstructura}" title="#{bundle.ViewClienteEstructuraTitle_idElementoEstructura}"/>
+                    </p:panelGrid>
+                    <p:commandButton value="#{bundle.Close}" onclick="ClienteEstructuraViewDialog.hide()"/>
+                </h:panelGroup>
+            </h:form>
+        </p:dialog>
+
+    </ui:composition>
+</html>

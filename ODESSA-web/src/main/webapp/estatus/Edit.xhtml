@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core"
+      xmlns:p="http://primefaces.org/ui">
+
+    <ui:composition>
+
+        <p:dialog id="EstatusEditDlg" widgetVar="EstatusEditDialog" modal="true" resizable="false" appendTo="@(body)" header="#{bundle.EditEstatusTitle}">
+            <h:form id="EstatusEditForm">
+                <h:panelGroup id="display">
+                    <p:panelGrid columns="2" rendered="#{estatusController.selected != null}">
+                        <p:outputLabel value="#{bundle.EditEstatusLabel_idEstatus}" for="idEstatus" />
+                        <p:inputText id="idEstatus" value="#{estatusController.selected.idEstatus}" title="#{bundle.EditEstatusTitle_idEstatus}" required="true" requiredMessage="#{bundle.EditEstatusRequiredMessage_idEstatus}"/>
+                        <p:outputLabel value="#{bundle.EditEstatusLabel_nombre}" for="nombre" />
+                        <p:inputText id="nombre" value="#{estatusController.selected.nombre}" title="#{bundle.EditEstatusTitle_nombre}" required="true" requiredMessage="#{bundle.EditEstatusRequiredMessage_nombre}"/>
+                        <p:outputLabel value="#{bundle.EditEstatusLabel_clave}" for="clave" />
+                        <p:inputText id="clave" value="#{estatusController.selected.clave}" title="#{bundle.EditEstatusTitle_clave}" required="true" requiredMessage="#{bundle.EditEstatusRequiredMessage_clave}"/>
+                        <p:outputLabel value="#{bundle.EditEstatusLabel_tipo}" for="tipo" />
+                        <p:inputText id="tipo" value="#{estatusController.selected.tipo}" title="#{bundle.EditEstatusTitle_tipo}" required="true" requiredMessage="#{bundle.EditEstatusRequiredMessage_tipo}"/>
+                    </p:panelGrid>
+                    <p:commandButton actionListener="#{estatusController.update}" value="#{bundle.Save}" update="display,:EstatusListForm:datalist,:growl" oncomplete="handleSubmit(args, 'EstatusEditDialog');"/>
+                    <p:commandButton value="#{bundle.Cancel}" onclick="EstatusEditDialog.hide()"/>
+                </h:panelGroup>
+            </h:form>
+        </p:dialog>
+
+    </ui:composition>
+</html>

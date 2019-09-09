@@ -1,0 +1,29 @@
+body{
+    background-color: #F2EFFB;
+}
+
+form{
+    width: 45%;
+    margin: auto;
+    margin-top: 10em;
+    background-color: white;
+    border-radius: 1em;
+    padding-left: 2em;
+    box-shadow: 1px 1px 5px #666;  
+}
+
+#buttons input{
+    box-shadow: 1px 1px 5px #666;
+    background: #DF7401;
+}
+
+
+
+input:hover{
+   
+    box-shadow: 1px 5px 5px #666;  
+}
+
+a{
+    color: #666;
+}

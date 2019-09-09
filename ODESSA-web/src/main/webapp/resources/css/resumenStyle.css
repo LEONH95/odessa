@@ -1,0 +1,107 @@
+#left{
+    width:25em; 
+    float:left; 
+    height: 12em;
+    color:black;
+}
+
+#center{
+    width:25em; 
+    margin: auto;
+    margin-left: 5em;
+    margin-right: 5em;
+    float: left;
+    height: 12em;
+}
+
+#right{
+    width:25em; 
+    margin-left: 62em;
+    height: 12em; 
+
+}  
+#ContentT{
+    width: 100%;
+    margin-left: 2em;
+    color: #696969;
+    text-align: left;
+    height: 14em;
+}
+
+
+#opcionesList{
+    width: 13em;
+    height: 18em;
+    border-right:2px solid #DDDADA;
+    padding-right:2em;
+    padding-left:2em;
+    text-align:center;
+    margin:auto;
+    float: left; 
+}
+
+h4{
+    text-align: left;
+    margin-left: 1em;
+    color:#DF7401;
+    margin-bottom: 1px;
+    font-weight: lighter;
+}
+
+h5{
+    color:#585858;
+    text-align: left;
+    font-weight: lighter;
+}
+
+h6{
+    font-size: 17px;
+    font-weight: lighter;
+}
+
+hr{
+    margin: 0em;
+}
+
+#buttons input{
+    border-radius: 5px;
+    border-color: #D8D8D8;
+    width: 8em;
+    margin-left: 1em;
+    margin-right: 1em;
+}
+
+#ContentD input, select, optgroup, textarea{
+    border-radius: 5px;
+    border-color: #D8D8D8;
+    width: 20em;
+
+}
+
+#ContentT input, select, optgroup, textarea{
+    border-radius: 5px;
+    border-color: #D8D8D8;
+    width: 20em;
+
+}
+
+#buttons{
+
+    text-align: center;
+}
+
+.triangulo {
+    width: 21px; 
+    height: 0; 
+    border-left: 13px solid #DF7401;
+    border-top: 8px solid transparent;
+    border-bottom: 8px solid transparent; 
+    float: left;
+
+}
+
+
+a{
+    color:#696969;
+}
+
